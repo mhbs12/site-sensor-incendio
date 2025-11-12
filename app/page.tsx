@@ -77,11 +77,11 @@ function getGasStatus(gasValue: number): { level: string; color: string; isCriti
 function getAlertMessage(data: SensorData): string {
   const alerts: string[] = []
 
-  if (data.temperatura > 35) {
+  if (data.temperatura >= 50) {
     alerts.push("🔥 Temperatura crítica")
-  } else if (data.temperatura > 30) {
+  } else if (data.temperatura >= 40) {
     alerts.push("⚠️ Temperatura elevada")
-  } else if (data.temperatura < 10) {
+  } else if (data.temperatura <= 10) {
     alerts.push("❄️ Temperatura muito baixa")
   }
 
